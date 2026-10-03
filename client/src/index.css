@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(1200px 700px at 15% -10%, #171c2e 0%, #0b0d14 55%) no-repeat;
+  color: #e6e9f2;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+*::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+*::-webkit-scrollbar-thumb {
+  background: #263049;
+  border-radius: 6px;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.tip {
+  position: relative;
+}
+.tip[data-tip]:hover::after {
+  content: attr(data-tip);
+  position: absolute;
+  z-index: 50;
+  left: 0;
+  bottom: calc(100% + 6px);
+  max-width: 420px;
+  width: max-content;
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: #0f1320;
+  border: 1px solid #2b3550;
+  color: #d6dcf0;
+  font-size: 12px;
+  line-height: 1.45;
+  white-space: pre-wrap;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.55);
+}
+
+@keyframes breathe {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: scaleY(0.7);
+  }
+  50% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+.sleeping .bar {
+  animation: breathe 1.6s ease-in-out infinite;
+}
+
+@keyframes caret {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+.caret::after {
+  content: "▍";
+  margin-left: 2px;
+  color: #c9b8ff;
+  animation: caret 1s steps(1) infinite;
+}

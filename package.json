@@ -1,0 +1,13 @@
+{
+  "name": "nocturne",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "./scripts/dev.sh",
+    "server": "./scripts/server.sh",
+    "client": "npm --prefix client run dev",
+    "build": "npm --prefix client run build",
+    "verify": "./scripts/verify.sh"
+  }
+}
